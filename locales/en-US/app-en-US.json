@@ -133,9 +133,10 @@
       "cancel": "Cancel",
       "reset": "Reset Settings",
       "export": "Export to File",
-      "reselect": "Select a Different File"
+      "print": "Print to Network"
     }
   },
+
   "settings": {
     "done": "Done",
     "reset": "Reset",

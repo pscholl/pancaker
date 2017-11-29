@@ -504,6 +504,77 @@ div#simulator-wrapper {
   }
 }
 
+#print {
+  width: 85%;
+  height: 80%;
+  padding-top: 0;
+
+  .overlay-title {
+    h2 {
+      margin: 0.5em 0 0.7em;
+    }
+  }
+
+  .overlay-title {
+    background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 41%, rgba(238, 238, 238, 0) 100%);
+  }
+
+  .overlay-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-right: 1.5em;
+    padding-top: 0;
+    height: 100%;
+    padding-bottom: 1em;
+
+    .loader {
+      top: 50%;
+      width: 50%;
+      left: 50%;
+      transform: translate(-50%);
+      margin: 0;
+    }
+
+    #simulator-webview {
+      flex: 3 0 0; // Fill 3/5 of height.
+      margin-bottom: 1em;
+      opacity: 0;
+      transition: opacity 100ms ease-in;
+    }
+
+    & > fieldset { // Fieldset in content below preview webview.
+      flex: 2 0 0; // Fill 2/5 of height.
+      overflow: hidden;
+      position: relative;
+
+      .operations {
+        position: absolute;
+        right: 1em;
+        top: 0;
+        font-size: 0.8em;
+
+        button {
+          margin-left: 1em;
+        }
+      }
+
+      div.flex-wrapper {
+        display: flex;
+        overflow-y: auto;
+        margin-top: 0.5em;
+
+        fieldset.col {
+          flex: 2 0 0;
+          border: none;
+        }
+      }
+    }
+
+  }
+
+}
+
 #export {
   width: 85%;
   height: 80%;

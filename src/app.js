@@ -399,12 +399,12 @@ function bindControls() {
   app.menuClick = function(menu, callback) {
     switch (menu) {
       case 'file.export':
-        mainWindow.overlay.windows.export.pickFile(function(filePath) {
-          if (!filePath) return; // Cancelled
+        mainWindow.overlay.windows.export.filePath = 'default.gcode';
+        mainWindow.overlay.toggleWindow('export', true);
+        break;
 
-          mainWindow.overlay.windows.export.filePath = filePath;
-          mainWindow.overlay.toggleWindow('export', true);
-        });
+      case 'file.print':
+        mainWindow.overlay.toggleWindow('print', true);
         break;
 
       case 'file.saveas':

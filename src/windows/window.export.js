@@ -18,6 +18,7 @@ module.exports = function(context) {
     filePath: "", // Export final data write path.
   };
 
+  var net = require('net');
   var $loadingBar = $('.loader', context);
 
   /**
@@ -70,6 +71,10 @@ module.exports = function(context) {
 
         case 'export':
           exportData.saveData();
+          break;
+
+        case 'print':
+          exportData.printData();
           break;
       }
     });
@@ -179,6 +184,54 @@ module.exports = function(context) {
 
     exportData.renderUpdate();
   };
+
+  /*
+   * send rendered GCode directly via TCP
+   */
+   exportData.printData = function() {
+    try {
+      var client = new net.Socket();
+      var gcode = exportData.gcode.split(/[\r\n]+/);
+
+      gcode = gcode.map(function(v) { return v.replace(/;.*$/, ''); });
+      gcode = gcode.filter(function(v) { return v.length != 0; });
+
+      //client.connect(23, 'pancaker.local', function() {
+      client.connect(23, '192.168.4.1', function() {
+        var i = 0;
+        client.write("G21\n");
+        client.on('data', function(rx) {
+          var str = new TextDecoder("utf-8").decode(rx);
+          console.log(str);
+
+          if (str.indexOf('ok') !== -1)
+            return;
+
+          client.write(gcode[i] + "\n"); i++;
+          console.log("> " + gcode[i]);
+
+          if (i >= gcode.length)
+            client.destroy();
+
+        });
+      });
+
+      // Notify user
+      toastr.success(
+        i18n.t('export.note', {file: path.parse(exportData.filePath).base})
+      );
+      mainWindow.overlay.toggleWindow('export', false); // Hide window.
+    } catch(e) {
+      console.error(e);
+      // Notify user
+      toastr.error(
+        i18n.t('export.err', {file: path.parse(exportData.filePath).base})
+      );
+    }
+
+  };
+
+
 
   /**
    * Save rendered GCODE data to the given initialized filePath.
