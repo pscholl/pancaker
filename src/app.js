@@ -157,14 +157,22 @@ function editorLoad() {
 function editorLoadedInit() { /* jshint ignore:line */
   $(window).resize();
   buildToolbar();
+  buildPrintButton();
   buildImageImporter();
-  buildColorPicker();
+  // buildColorPicker();
 
   // Initialize overlay modal windows.
   mainWindow.overlay.initWindows();
 
   // Bind remaining controls.
   bindControls();
+}
+
+// Build the Print Button
+function buildPrintButton() {
+   $('#logo').click(function() {
+     app.menuClick('file.export', function() {});
+   });
 }
 
 // Build the toolbar DOM dynamically.
@@ -401,10 +409,6 @@ function bindControls() {
       case 'file.export':
         mainWindow.overlay.windows.export.filePath = 'default.gcode';
         mainWindow.overlay.toggleWindow('export', true);
-        break;
-
-      case 'file.print':
-        mainWindow.overlay.toggleWindow('print', true);
         break;
 
       case 'file.saveas':

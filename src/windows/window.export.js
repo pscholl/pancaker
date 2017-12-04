@@ -305,6 +305,7 @@ module.exports = function(context) {
    * Window initialization callback, triggered on window import.
    */
   exportData.init = function() {
+    console.log("init called");
     $(window).on('settingsChanged', exportData.setRenderSettings);
     setupWebview();
     initRenderConfig();

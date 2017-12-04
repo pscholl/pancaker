@@ -759,8 +759,12 @@ div.overlay-window {
 @media (max-width: 975px) {
   #toolback {
     #logo {
-      height: 23px;
-      top: 30px;
+      top: 15px;
+      height: 20px;
+      padding: 10px;
+      border: 1px solid #000000;
+      box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4)
+
     }
 
     .ver {
