@@ -160,7 +160,7 @@ function editorLoadedInit() { /* jshint ignore:line */
   buildPrintButton();
   buildImageImporter();
   buildPrintQueue();
-  // buildColorPicker();
+  buildColorPicker();
 
   // Initialize overlay modal windows.
   mainWindow.overlay.initWindows();

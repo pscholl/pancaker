@@ -47,8 +47,8 @@ function settingsInit() {
   app.constants = {
     pancakeShades: [
       '#ffea7e',
-      '#e2bc15',
-      '#a6720e',
+//      '#e2bc15',
+//      '#a6720e',
       '#714a00'
     ],
     botSpeedMax: 6600, // Real world PancakeBot speed maximum.
