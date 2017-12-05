@@ -64,6 +64,9 @@
     "color2": "Medium dark",
     "color3": "Dark"
   },
+  "printqueue": {
+    "title": "Show current print queue"
+  },
   "import": {
     "title": "Import image for tracing…",
     "autotitle": {
@@ -128,7 +131,8 @@
     "start": "Export",
     "wait": "Exporting, please wait…",
     "err" : "Error exporting \"__file__\", please report this issue with the problem project file.",
-    "note" : "Successfully exported \"__file__\" for printing.",
+    "note" : "Successfully enqueued \"__file__\" for printing.",
+    "printed" : "Successfully printed last file.",
     "buttons": {
       "cancel": "Cancel",
       "reset": "Reset Settings",

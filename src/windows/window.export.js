@@ -16,6 +16,9 @@ module.exports = function(context) {
     renderConfig: {}, // Placeholder for render config passover from settings.
     gcode: "", // Placeholder for exported GCODE.
     filePath: "", // Export final data write path.
+    queue: [],    // queue of jobs to be done
+    queueChanged: function() {}, // callback when queue is changed
+    progress: function() {},     // callback for progess during printing
   };
 
   var net = require('net');
@@ -74,7 +77,7 @@ module.exports = function(context) {
           break;
 
         case 'print':
-          exportData.printData();
+          exportData.enqueueData();
           break;
       }
     });
@@ -186,41 +189,83 @@ module.exports = function(context) {
   };
 
   /*
+   * enqueue Data for now
+   */
+   exportData.enqueueData = function() {
+     var gcode = exportData.gcode.split(/[\r\n]+/);
+     exportData.queue.push(gcode);
+
+     if (exportData.queueChanged)
+       exportData.queueChanged(exportData.queue);
+
+     if (exportData.queue.length == 1)
+       exportData.printNextElement();
+
+     mainWindow.overlay.toggleWindow('export', false); // Hide window.
+
+     // Notify user
+     toastr.success(
+       i18n.t('export.note', {file: path.parse(exportData.filePath).base})
+     );
+   };
+
+  /*
    * send rendered GCode directly via TCP
    */
-   exportData.printData = function() {
+   exportData.printNextElement = function() {
     try {
       var client = new net.Socket();
-      var gcode = exportData.gcode.split(/[\r\n]+/);
+      var gcode = exportData.queue[0];
+
+      if (typeof gcode === 'undefined')
+        return;
 
       gcode = gcode.map(function(v) { return v.replace(/;.*$/, ''); });
       gcode = gcode.filter(function(v) { return v.length != 0; });
 
-      //client.connect(23, 'pancaker.local', function() {
       client.connect(23, '192.168.4.1', function() {
-        var i = 0;
-        client.write("G21\n");
+        var i = 0, temperature_ok = false, bedisempty = false;
+
         client.on('data', function(rx) {
           var str = new TextDecoder("utf-8").decode(rx);
           console.log(str);
 
-          if (str.indexOf('ok') !== -1)
+          /*
+           * check if the temperature is okay and if the bed is empty
+           */
+          //if (!temperature_ok && str.toLowerCase().indexOf('tempok') !== -1)
+            temperature_ok = true;
+
+          if (!bedisempty && str.toLowerCase().indexOf('buttok') !== -1)
+            bedisempty = true;
+
+          if (!bedisempty || !temperature_ok)
             return;
 
+          if (exportData.progress)
+            exportData.progress(i / gcode.length);
+
+          /*
+           * all good we can start transmitting.
+           */
           client.write(gcode[i] + "\n"); i++;
           console.log("> " + gcode[i]);
 
-          if (i >= gcode.length)
+          if (i >= gcode.length) {
             client.destroy();
+            exportData.queue.shift();
 
+            // Notify user
+            toastr.success( i18n.t('export.printed'));
+
+            if (exportData.queueChanged)
+              exportData.queueChanged(exportData.queue);
+
+            exportData.printNextElement();
+          }
         });
       });
 
-      // Notify user
-      toastr.success(
-        i18n.t('export.note', {file: path.parse(exportData.filePath).base})
-      );
-      mainWindow.overlay.toggleWindow('export', false); // Hide window.
     } catch(e) {
       console.error(e);
       // Notify user
@@ -305,7 +350,6 @@ module.exports = function(context) {
    * Window initialization callback, triggered on window import.
    */
   exportData.init = function() {
-    console.log("init called");
     $(window).on('settingsChanged', exportData.setRenderSettings);
     setupWebview();
     initRenderConfig();

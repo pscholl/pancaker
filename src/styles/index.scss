@@ -344,7 +344,7 @@ canvas#autotrace-preview {
 
   // Normally this would auto-size fine, but there are wrapping issues that
   // need to be addressed before we can handle more tools.
-  width: 400px;
+  width: 500px;
 
   ul {
     list-style: none;
@@ -364,6 +364,18 @@ canvas#autotrace-preview {
       background-position-x: 100%;
     }
   }
+
+  #printqueue, #percentage, #queuesize {
+    color: white;
+    margin-top: .5pt;
+    text-align: right;
+  }
+
+  #printqueue_inner {
+    height: auto;
+    padding-top: 10px;
+  }
+
 
   // The individual tool button
   div {
@@ -390,6 +402,10 @@ canvas#autotrace-preview {
 
   &.color-3 .tool.color-change div {
     background-position-y: 100%;
+  }
+
+  #printqueue {
+    background: url("../images/pancake.svg") no-repeat center;
   }
 
   #import {

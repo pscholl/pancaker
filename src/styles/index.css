@@ -290,7 +290,7 @@ canvas#autotrace-preview.color-pick {
   top: 5px;
   transform: translate(-81%, 0);
   z-index: 5;
-  width: 400px;
+  width: 500px;
 }
 #tools ul {
   list-style: none;
@@ -308,6 +308,15 @@ canvas#autotrace-preview.color-pick {
 #tools .tool.active div {
   background-position-x: 100%;
 }
+#tools #printqueue, #tools #percentage, #tools #queuesize {
+  color: white;
+  margin-top: .5pt;
+  text-align: right;
+}
+#tools #printqueue_inner {
+  height: auto;
+  padding-top: 10px;
+}
 #tools div {
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -324,6 +333,9 @@ canvas#autotrace-preview.color-pick {
 }
 #tools.color-3 .tool.color-change div {
   background-position-y: 100%;
+}
+#tools #printqueue {
+  background: url("../images/pancake.svg") no-repeat center;
 }
 #tools #import {
   overflow: visible;
@@ -916,8 +928,11 @@ div.overlay-window .overlay-content b {
 
 @media (max-width: 975px) {
   #toolback #logo {
-    height: 23px;
-    top: 30px;
+    top: 15px;
+    height: 20px;
+    padding: 10px;
+    border: 1px solid #000000;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
   #toolback .ver {
     top: 41px;

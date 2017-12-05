@@ -159,6 +159,7 @@ function editorLoadedInit() { /* jshint ignore:line */
   buildToolbar();
   buildPrintButton();
   buildImageImporter();
+  buildPrintQueue();
   // buildColorPicker();
 
   // Initialize overlay modal windows.
@@ -296,6 +297,26 @@ function selectColor(index) {
   }
 }
 
+function buildPrintQueue() {
+  var $printQueueButton = $('<div>')
+    .addClass('tool')
+    .attr('id', 'printqueue')
+    .attr('title', i18n.t('printqueue.title'));
+
+  $printQueueButton.on('mouseout click', function(e){
+  });
+
+  $printQueueButton.append($("\
+    <div id='printqueue_inner'>\
+    <span id='queuesize'>5</span>\
+    </br>\
+    <span id='percentage'>89%</span>\
+    </div>\
+  "));
+
+  $('#tools #tool-select').after($printQueueButton);
+}
+
 // Build the fake tool placeholder for image import
 function buildImageImporter() {
   var $importButton = $('<div>')
@@ -409,6 +430,15 @@ function bindControls() {
       case 'file.export':
         mainWindow.overlay.windows.export.filePath = 'default.gcode';
         mainWindow.overlay.toggleWindow('export', true);
+
+        mainWindow.overlay.windows.export.progress = function(percentage) {
+          $('#percentage')[0].textContent = new String(Math.round(percentage * 100)) + "%";
+        }
+
+        mainWindow.overlay.windows.export.queueChanged = function(q) {
+          $('#queuesize')[0].textContent = new String(q.length);
+        }
+
         break;
 
       case 'file.saveas':
