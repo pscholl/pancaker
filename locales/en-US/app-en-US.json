@@ -184,6 +184,8 @@
       "title": "Print Export Options",
       "botspeed": "Print Speed:",
       "botspeedinfo": "The percent of the maximum speed that the PancakeBot will move at, defaults to 70%. If this has no effect on your PancakeBot you may need to install the new firmware available on PancakeBot.com. Increasing the speed of the PancakeBot may reduce its life span.",
+      "address" : "Network Address of Pancaker",
+      "addressinfo" : "The IP network address under which the Pancaker is reachable, and which can be used for remote printing",
       "flatten": "Smallest flatten distance:",
       "flatteninfo": "The resolution limit when converting curves into polygons for GCODE coordinates. Lower value creates more points and higher resolution, higher value creates fewer points and lower resolution approximation.",
       "shutoff": "Line end pre-shutoff distance:",

@@ -89,6 +89,7 @@ function settingsInit() {
       endwait: 250,         // Time to wait for batter flow at end of line
       changewait: 15,       // Number of seconds to wait between shade changes.
       botspeed: 70,         // Locked stepper speed percentage written to GCODE
+      address: '192.168.4.1', // Network address for IPped Pancaker
       usecolorspeed: false, // Whether to use different speeds for colors.
       useshortest: true,   // Whether to travel sort the final layer.
       botspeedcolor1: 100,  // Light speed.

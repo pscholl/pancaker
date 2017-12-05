@@ -580,6 +580,8 @@ function bindControls() {
     $(this).change(function(){
       if (this.type === 'checkbox') {
         app.settings.v[key] = $(this).prop('checked');
+      } else if (this.type == 'text') {
+        app.settings.v[key] = this.value;
       } else {
         app.settings.v[key] = parseFloat(this.value);
       }
