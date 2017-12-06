@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PancakePainter!
 #### The super-simple drawing software for your PancakeBot.
 
