@@ -55,19 +55,19 @@ function settingsInit() {
 
     // Real world measurement of the griddle maximum dimensions in MM
     griddleSize: {
-      width: 320,
+      width: 440,
       height: 280,
     },
 
     // Printable/drawable area in MM from furthest griddle edge.
     printableArea: {
       offset: {
-        left: 20,
-        top:  20,
-        right: 80, // Used exclusively for GCODE X offset
+        left: 120,
+        top:  30,
+        right: 1, // Used exclusively for GCODE X offset
       },
-      width: 280,
-      height: 240,
+      width: 250,
+      height: 200,
     },
   };
 

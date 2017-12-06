@@ -223,7 +223,7 @@ module.exports = function(context) {
       gcode = gcode.map(function(v) { return v.replace(/;.*$/, ''); });
       gcode = gcode.filter(function(v) { return v.length != 0; });
 
-      client.connect(23, app.settings.address, function() {
+      client.connect(23, app.settings.v['address'], function() {
         var i = 0, temperature_ok = false, bedisempty = false;
 
         client.on('data', function(rx) {
