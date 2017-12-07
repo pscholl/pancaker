@@ -308,9 +308,9 @@ function buildPrintQueue() {
 
   $printQueueButton.append($("\
     <div id='printqueue_inner'>\
-    <span id='queuesize'>5</span>\
+    <span id='queuesize'>0</span>\
     </br>\
-    <span id='percentage'>89%</span>\
+    <span id='percentage'>0%</span>\
     </div>\
   "));
 

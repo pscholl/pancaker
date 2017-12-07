@@ -233,7 +233,7 @@ module.exports = function(context) {
           /*
            * check if the temperature is okay and if the bed is empty
            */
-          //if (!temperature_ok && str.toLowerCase().indexOf('tempok') !== -1)
+          if (!temperature_ok && str.toLowerCase().indexOf('tempok') !== -1)
             temperature_ok = true;
 
           if (!bedisempty && str.toLowerCase().indexOf('buttok') !== -1)
