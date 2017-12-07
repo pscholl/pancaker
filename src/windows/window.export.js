@@ -242,6 +242,9 @@ module.exports = function(context) {
           if (!bedisempty || !temperature_ok)
             return;
 
+          if (str.trim().toLowerCase().indexOf('ok') !== 0)
+            return;
+
           if (exportData.progress)
             exportData.progress(i / gcode.length);
 
