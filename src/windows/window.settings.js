@@ -16,8 +16,8 @@ module.exports = function(context) {
       switch(this.name) {
         case 'done':
           mainWindow.overlay.toggleWindow('settings', false);
-          while (mainWindow.overlay.export.exportData.queue.length() > 0)
-            mainWindow.overlay.export.exportData.cancel(0);
+          while (mainWindow.overlay.windows.export.queue.length > 0)
+            mainWindow.overlay.windows.export.cancel(0);
           break;
 
         case 'reset':
