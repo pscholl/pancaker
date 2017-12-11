@@ -220,18 +220,44 @@ module.exports = function(context) {
       if (typeof gcode === 'undefined')
         return;
 
+      /* for cancellation of this job */
+      exportData.queue[0].client = client;
+
       gcode = gcode.map(function(v) { return v.replace(/;.*$/, ''); });
       gcode = gcode.filter(function(v) { return v.length != 0; });
 
+      var done = function() {
+        client.destroy();
+        exportData.queue.shift();
+
+        // Notify user
+        toastr.success( i18n.t('export.printed'));
+
+        if (exportData.queueChanged)
+          exportData.queueChanged(exportData.queue);
+
+        exportData.printNextElement();
+      }
+
+      client.on('error', function(e) {
+        console.log(e);
+        toastr.error(i18n.t('export.err', {err: String(e)}));
+        done();
+      });
+
       client.connect(23, app.settings.v['address'], function() {
-        var i = 0, temperature_ok = false, bedisempty = false;
+        var linessent = 0,
+            linesacked = 0,
+            temperature_ok = false,
+            bedisempty = false;
 
         client.on('data', function(rx) {
           var str = new TextDecoder("utf-8").decode(rx);
           console.log(str);
 
           /*
-           * check if the temperature is okay and if the bed is empty
+           * Only send new lines, once the temperature was signaled as okay, and
+           * the bed is empty (by pushing a button near the bed)
            */
           if (!temperature_ok && str.toLowerCase().indexOf('tempok') !== -1)
             temperature_ok = true;
@@ -242,34 +268,34 @@ module.exports = function(context) {
           if (!bedisempty || !temperature_ok)
             return;
 
-          if (str.trim().toLowerCase().indexOf('ok') !== 0)
-            return;
-
-          if (exportData.progress)
-            exportData.progress(i / gcode.length);
+          if (str.trim().toLowerCase().indexOf('ok') !== 0 && linessent > linesacked)
+            linesacked += 1;
 
           /*
-           * all good we can start transmitting.
+           * send progress report
            */
-          client.write(gcode[i] + "\n"); i++;
-          console.log("> " + gcode[i]);
+          if (exportData.progress)
+            exportData.progress(linesacked / gcode.length);
 
-          if (i >= gcode.length) {
-            client.destroy();
-            exportData.queue.shift();
-
-            // Notify user
-            toastr.success( i18n.t('export.printed'));
-
-            if (exportData.queueChanged)
-              exportData.queueChanged(exportData.queue);
-
-            exportData.printNextElement();
+          /*
+           * all good we can start transmitting, and we try to keep 10
+           * lines in flight all the time.
+           */
+          while (linessent - linesacked < 10 &&
+                 linessent < gcode.length)
+          {
+            client.write(gcode[linessent] + "\n");
+            console.log("> " + gcode[linessent]);
+            linessent += 1;
           }
+
+          if (linesacked >= gcode.length)
+            done();
         });
       });
 
     } catch(e) {
+      done();
       console.error(e);
       // Notify user
       toastr.error(
@@ -384,6 +410,22 @@ module.exports = function(context) {
   exportData.resize = function() {
     var h = $('.overlay-content > fieldset', context).height();
     $('div.flex-wrapper', context).height(h - 18);
+  };
+
+  /**
+   * cancel a job number from the queue
+   */
+  exportData.cancel = function(jobnum) {
+    var gcode = exportData.queue.splice(jobnum, 1)[0];
+
+    if (typeof gcode !== 'undefined' && gcode.client)
+      gcode.client.destroy();
+
+    if (exportData.queueChanged)
+      exportData.queueChanged(exportData.queue);
+
+    if (exportData.queue.length > 0)
+      exportData.printNextElement();
   };
 
   return exportData;

@@ -130,7 +130,7 @@
     "title": "Export creation for printing…",
     "start": "Export",
     "wait": "Exporting, please wait…",
-    "err" : "Error exporting \"__file__\", please report this issue with the problem project file.",
+    "err" : "Error exporting: \"__err__\".",
     "note" : "Successfully enqueued \"__file__\" for printing.",
     "printed" : "Successfully printed last file.",
     "buttons": {

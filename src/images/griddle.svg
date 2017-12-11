@@ -1,55 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1437.2 758.8" enable-background="new 0 0 1437.2 758.8" xml:space="preserve" preserveAspectRatio="none">
-<g>
-	
-		<radialGradient id="SVGID_1_" cx="706.5519" cy="374.4817" r="792.1729" gradientTransform="matrix(1.0175 0 0 1.0144 0 0)" gradientUnits="userSpaceOnUse">
-		<stop  offset="0.871" style="stop-color:#605E5F"/>
-		<stop  offset="0.9148" style="stop-color:#494749"/>
-		<stop  offset="0.9659" style="stop-color:#343235"/>
-		<stop  offset="1" style="stop-color:#2D2B2E"/>
-	</radialGradient>
-	<polygon fill="url(#SVGID_1_)" points="56.8,758.1 47.6,757.3 39.6,753 31.9,746.8 27.6,739.7 24.2,729.7 12.5,630.7 4.9,530.4 
-		1.7,430.1 1.7,329.7 4.9,229.3 12.5,129.1 24.2,31.1 27.7,20.9 32.1,12.8 39.2,7.1 47.6,3.3 57.5,1.7 1380.4,1.7 1390.5,3.4 
-		1399.6,7.1 1405.9,12.7 1411.1,20.8 1413.6,30.6 1425.4,129.1 1432.9,229.4 1436.2,329.7 1436.2,430.1 1432.9,530.5 1425.4,630.7 
-		1413.5,730.3 1411.2,739.7 1406.2,746.8 1399.2,753 1390.5,757.3 1381,758.1 	"/>
-	<path fill="#170F00" d="M1380.3,3.4L1390,5l8.7,3.6l5.9,5.3l4.9,7.7l2.3,9.4l11.8,98.4l7.6,100.2l3.2,100.3v100.4l-3.2,100.3
-		l-7.6,100.2l-11.8,99.5l-2.2,9l-4.7,6.7l-6.7,5.9l-8.2,4.1l-9.1,0.8H56.9l-8.8-0.7l-7.6-4.1l-7.4-5.9l-4-6.7l-3.2-9.6l-11.7-98.8
-		L6.6,530.3L3.4,430.1V329.7l3.2-100.3l7.6-100.2l11.7-97.8l3.3-10l4.2-7.7L40,8.6l8.1-3.7l9.5-1.6H1380.3 M1380.5,0H57.3L47.1,1.7
-		l-8.8,4l-7.5,6l-4.7,8.5l-3.5,10.6l-11.8,98.2L3.2,229.3L0,329.7v100.5l3.2,100.4l7.6,100.3l11.8,99.2l3.5,10.3l4.5,7.5l8.1,6.4
-		l8.4,4.6l9.7,0.8h1324.3l9.9-0.8l9.2-4.6l7.3-6.5l5.3-7.5l2.5-9.8l11.8-99.8l7.6-100.3l3.2-100.4V329.7l-3.2-100.4l-7.6-100.3
-		l-11.8-98.7l-2.5-10.1l-5.4-8.5l-6.7-5.9l-9.5-4L1380.5,0L1380.5,0z"/>
-</g>
-<g>
-	
-		<radialGradient id="SVGID_2_" cx="676.7454" cy="342.7787" r="782.9622" gradientTransform="matrix(1.0175 0 0 1.0144 0 0)" gradientUnits="userSpaceOnUse">
-		<stop  offset="0" style="stop-color:#535250"/>
-		<stop  offset="1" style="stop-color:#434341"/>
-	</radialGradient>
-	<polygon fill="url(#SVGID_2_)" points="57.2,749.7 50.1,749.1 44.3,746 38.3,741.2 35.3,736.2 32.5,727.9 20.9,629.9 13.3,530 
-		10.1,430 10.1,329.8 13.3,229.8 20.9,129.9 32.5,33 35.4,24.2 38.7,18.2 43.6,14.3 50.1,11.4 58.2,10 1379.7,10 1388.2,11.5 
-		1395.1,14.3 1399.5,18.2 1403.3,24.2 1405.3,32.1 1417,129.9 1424.5,229.8 1427.8,329.8 1427.8,430 1424.5,530 1417,629.9 
-		1405.3,728.8 1403.4,736.2 1399.9,741.2 1394.5,746 1388.2,749.1 1380.7,749.7 	"/>
-	<polygon fill="none" stroke="#FF0000" stroke-width="3.3536" stroke-miterlimit="10" stroke-dasharray="13.4204,6.7102" points="
-		57.2,749.7 50.1,749.1 44.3,746 38.3,741.2 35.3,736.2 32.5,727.9 20.9,629.9 13.3,530 10.1,430 10.1,329.8 13.3,229.8 20.9,129.9 
-		32.5,33 35.4,24.2 38.7,18.2 43.6,14.3 50.1,11.4 58.2,10 1379.7,10 1388.2,11.5 1395.1,14.3 1399.5,18.2 1403.3,24.2 1405.3,32.1 
-		1417,129.9 1424.5,229.8 1427.8,329.8 1427.8,430 1424.5,530 1417,629.9 1405.3,728.8 1403.4,736.2 1399.9,741.2 1394.5,746 
-		1388.2,749.1 1380.7,749.7 	"/>
-</g>
-<rect x="102.7" y="98.6" fill="none" stroke="#A27500" stroke-width="2.3192" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="1255.7" height="595.3"/>
-<g>
-	
-		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-287.7121" y1="-306.7326" x2="-287.7121" y2="-261.5671" gradientTransform="matrix(-1 0 0 -1 431.217 436.6689)">
-		<stop  offset="0" style="stop-color:#6D6B6C"/>
-		<stop  offset="0.2194" style="stop-color:#595757"/>
-		<stop  offset="0.5" style="stop-color:#434240"/>
-		<stop  offset="0.7999" style="stop-color:#312D2E"/>
-		<stop  offset="1" style="stop-color:#2A2627"/>
-	</linearGradient>
-	<ellipse fill="url(#SVGID_3_)" cx="718.9" cy="720.8" rx="52" ry="22.6"/>
-	
-		<ellipse fill="#E0E1E2" stroke="#3D3D3D" stroke-width="2.3475" stroke-miterlimit="10" cx="718.9" cy="719.9" rx="27.8" ry="14.4"/>
-</g>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1437.2 758.8"
+   enable-background="new 0 0 1437.2 758.8"
+   xml:space="preserve"
+   preserveAspectRatio="none"
+   sodipodi:docname="griddle.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"><metadata
+     id="metadata52"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs50" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1440"
+     id="namedview48"
+     showgrid="false"
+     inkscape:zoom="1.1156568"
+     inkscape:cx="575.75114"
+     inkscape:cy="414.33941"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" /><g
+     id="g15"><radialGradient
+       id="SVGID_1_"
+       cx="706.5519"
+       cy="374.4817"
+       r="792.1729"
+       gradientTransform="matrix(1.0175 0 0 1.0144 0 0)"
+       gradientUnits="userSpaceOnUse"><stop
+         offset="0.871"
+         style="stop-color:#605E5F"
+         id="stop2" /><stop
+         offset="0.9148"
+         style="stop-color:#494749"
+         id="stop4" /><stop
+         offset="0.9659"
+         style="stop-color:#343235"
+         id="stop6" /><stop
+         offset="1"
+         style="stop-color:#2D2B2E"
+         id="stop8" /></radialGradient><polygon
+       fill="url(#SVGID_1_)"
+       points="56.8,758.1 47.6,757.3 39.6,753 31.9,746.8 27.6,739.7 24.2,729.7 12.5,630.7 4.9,530.4    1.7,430.1 1.7,329.7 4.9,229.3 12.5,129.1 24.2,31.1 27.7,20.9 32.1,12.8 39.2,7.1 47.6,3.3 57.5,1.7 1380.4,1.7 1390.5,3.4    1399.6,7.1 1405.9,12.7 1411.1,20.8 1413.6,30.6 1425.4,129.1 1432.9,229.4 1436.2,329.7 1436.2,430.1 1432.9,530.5 1425.4,630.7    1413.5,730.3 1411.2,739.7 1406.2,746.8 1399.2,753 1390.5,757.3 1381,758.1  "
+       id="polygon11" /><path
+       fill="#170F00"
+       d="M1380.3,3.4L1390,5l8.7,3.6l5.9,5.3l4.9,7.7l2.3,9.4l11.8,98.4l7.6,100.2l3.2,100.3v100.4l-3.2,100.3   l-7.6,100.2l-11.8,99.5l-2.2,9l-4.7,6.7l-6.7,5.9l-8.2,4.1l-9.1,0.8H56.9l-8.8-0.7l-7.6-4.1l-7.4-5.9l-4-6.7l-3.2-9.6l-11.7-98.8   L6.6,530.3L3.4,430.1V329.7l3.2-100.3l7.6-100.2l11.7-97.8l3.3-10l4.2-7.7L40,8.6l8.1-3.7l9.5-1.6H1380.3 M1380.5,0H57.3L47.1,1.7   l-8.8,4l-7.5,6l-4.7,8.5l-3.5,10.6l-11.8,98.2L3.2,229.3L0,329.7v100.5l3.2,100.4l7.6,100.3l11.8,99.2l3.5,10.3l4.5,7.5l8.1,6.4   l8.4,4.6l9.7,0.8h1324.3l9.9-0.8l9.2-4.6l7.3-6.5l5.3-7.5l2.5-9.8l11.8-99.8l7.6-100.3l3.2-100.4V329.7l-3.2-100.4l-7.6-100.3   l-11.8-98.7l-2.5-10.1l-5.4-8.5l-6.7-5.9l-9.5-4L1380.5,0L1380.5,0z"
+       id="path13" /></g><g
+     id="g26"><radialGradient
+       id="SVGID_2_"
+       cx="676.7454"
+       cy="342.7787"
+       r="782.9622"
+       gradientTransform="matrix(1.0175 0 0 1.0144 0 0)"
+       gradientUnits="userSpaceOnUse"><stop
+         offset="0"
+         style="stop-color:#535250"
+         id="stop17" /><stop
+         offset="1"
+         style="stop-color:#434341"
+         id="stop19" /></radialGradient><polygon
+       fill="url(#SVGID_2_)"
+       points="57.2,749.7 50.1,749.1 44.3,746 38.3,741.2 35.3,736.2 32.5,727.9 20.9,629.9 13.3,530    10.1,430 10.1,329.8 13.3,229.8 20.9,129.9 32.5,33 35.4,24.2 38.7,18.2 43.6,14.3 50.1,11.4 58.2,10 1379.7,10 1388.2,11.5    1395.1,14.3 1399.5,18.2 1403.3,24.2 1405.3,32.1 1417,129.9 1424.5,229.8 1427.8,329.8 1427.8,430 1424.5,530 1417,629.9    1405.3,728.8 1403.4,736.2 1399.9,741.2 1394.5,746 1388.2,749.1 1380.7,749.7  "
+       id="polygon22" /><polygon
+       fill="none"
+       stroke="#FF0000"
+       stroke-width="3.3536"
+       stroke-miterlimit="10"
+       stroke-dasharray="13.4204,6.7102"
+       points="   57.2,749.7 50.1,749.1 44.3,746 38.3,741.2 35.3,736.2 32.5,727.9 20.9,629.9 13.3,530 10.1,430 10.1,329.8 13.3,229.8 20.9,129.9    32.5,33 35.4,24.2 38.7,18.2 43.6,14.3 50.1,11.4 58.2,10 1379.7,10 1388.2,11.5 1395.1,14.3 1399.5,18.2 1403.3,24.2 1405.3,32.1    1417,129.9 1424.5,229.8 1427.8,329.8 1427.8,430 1424.5,530 1417,629.9 1405.3,728.8 1403.4,736.2 1399.9,741.2 1394.5,746    1388.2,749.1 1380.7,749.7  "
+       id="polygon24" /></g><rect
+     x="102.7"
+     y="66.332008"
+     stroke-miterlimit="10"
+     width="1255.7"
+     height="595.29999"
+     id="rect28"
+     style="fill:none;stroke:#a27500;stroke-width:2.31920004;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><g
+     id="g45"><linearGradient
+       id="SVGID_3_"
+       gradientUnits="userSpaceOnUse"
+       x1="-287.7121"
+       y1="-306.7326"
+       x2="-287.7121"
+       y2="-261.5671"
+       gradientTransform="matrix(-1 0 0 -1 431.217 436.6689)"><stop
+         offset="0"
+         style="stop-color:#6D6B6C"
+         id="stop30" /><stop
+         offset="0.2194"
+         style="stop-color:#595757"
+         id="stop32" /><stop
+         offset="0.5"
+         style="stop-color:#434240"
+         id="stop34" /><stop
+         offset="0.7999"
+         style="stop-color:#312D2E"
+         id="stop36" /><stop
+         offset="1"
+         style="stop-color:#2A2627"
+         id="stop38" /></linearGradient><ellipse
+       fill="url(#SVGID_3_)"
+       cx="718.9"
+       cy="720.8"
+       rx="52"
+       ry="22.6"
+       id="ellipse41" /><ellipse
+       fill="#E0E1E2"
+       stroke="#3D3D3D"
+       stroke-width="2.3475"
+       stroke-miterlimit="10"
+       cx="718.9"
+       cy="719.9"
+       rx="27.8"
+       ry="14.4"
+       id="ellipse43" /></g></svg>
