@@ -303,7 +303,8 @@ function buildPrintQueue() {
     .attr('id', 'printqueue')
     .attr('title', i18n.t('printqueue.title'));
 
-  $printQueueButton.on('mouseout click', function(e){
+  $printQueueButton.on('click', function(e){
+    mainWindow.overlay.toggleWindow('queue', true);
   });
 
   $printQueueButton.append($("\
@@ -435,9 +436,9 @@ function bindControls() {
           $('#percentage')[0].textContent = new String(Math.round(percentage * 100)) + "%";
         }
 
-        mainWindow.overlay.windows.export.queueChanged = function(q) {
+        mainWindow.overlay.windows.export.queueChanged.push(function(q) {
           $('#queuesize')[0].textContent = new String(q.length);
-        }
+        });
 
         break;
 
@@ -637,7 +638,7 @@ window.onbeforeunload = function() {
 
 // Overlay modal internal "window" management API ==============================
 mainWindow.overlay = {
-  windowNames: ['export', 'autotrace', 'settings'], // TODO: load automatically.
+  windowNames: ['export', 'autotrace', 'settings', 'queue'], // TODO: load automatically.
   windows: {}, // Placeholder for window module code.
   toggleWindow: function(name, toggle) {
     if (this.windowNames.indexOf(name) !== -1) {

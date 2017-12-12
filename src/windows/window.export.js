@@ -17,7 +17,7 @@ module.exports = function(context) {
     gcode: "", // Placeholder for exported GCODE.
     filePath: "", // Export final data write path.
     queue: [],    // queue of jobs to be done
-    queueChanged: function() {}, // callback when queue is changed
+    queueChanged: [], // callback when queue is changed
     progress: function() {},     // callback for progess during printing
   };
 
@@ -193,10 +193,9 @@ module.exports = function(context) {
    */
    exportData.enqueueData = function() {
      var gcode = exportData.gcode.split(/[\r\n]+/);
-     exportData.queue.push(gcode);
 
-     if (exportData.queueChanged)
-       exportData.queueChanged(exportData.queue);
+     exportData.queue.push(gcode);
+     exportData.emitQueueChanged();
 
      if (exportData.queue.length == 1)
        exportData.printNextElement();
@@ -233,9 +232,7 @@ module.exports = function(context) {
         // Notify user
         toastr.success( i18n.t('export.printed'));
 
-        if (exportData.queueChanged)
-          exportData.queueChanged(exportData.queue);
-
+        exportData.emitQueueChanged();
         exportData.printNextElement();
       }
 
@@ -421,12 +418,18 @@ module.exports = function(context) {
     if (typeof gcode !== 'undefined' && gcode.client)
       gcode.client.destroy();
 
-    if (exportData.queueChanged)
-      exportData.queueChanged(exportData.queue);
+    exportData.emitQueueChanged();
 
     if (exportData.queue.length > 0)
       exportData.printNextElement();
   };
 
+  exportData.emitQueueChanged = function() {
+    for(var i=0; i<exportData.queueChanged.length; i++) {
+      exportData.queueChanged[i](exportData.queue);
+    }
+  };
+
   return exportData;
 };
+

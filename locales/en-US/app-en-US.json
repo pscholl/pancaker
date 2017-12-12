@@ -141,6 +141,12 @@
     }
   },
 
+  "queue": {
+    "title": "Are you sure that you want to cancel the latest job?",
+    "ok" : "OK",
+    "cancel" : "Cancel"
+  },
+
   "settings": {
     "done": "Done",
     "reset": "Reset",
