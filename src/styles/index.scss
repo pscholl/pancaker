@@ -586,9 +586,57 @@ div#simulator-wrapper {
         }
       }
     }
+  }
+}
 
+#queue {
+  .preview {
+    width: 30%;
+    background: #333333;
+    vertical-align: middle;
+    display: inline;
   }
 
+  .text {
+    vertical-align: middle;
+    margin-left: 10%;
+    display: inline;
+  }
+
+ .container {
+    position: relative;
+    display: table;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1%;
+  }
+
+ .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #e50000;
+ }
+
+ .container:hover .overlay {
+    opacity: .6;
+ }
+
+ button {
+   color: white;
+   font-size: 20px;
+   position: absolute;
+   top: 50%;
+   left: 80%;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+ }
 }
 
 #export {

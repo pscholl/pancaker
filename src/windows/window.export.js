@@ -194,6 +194,11 @@ module.exports = function(context) {
    exportData.enqueueData = function() {
      var gcode = exportData.gcode.split(/[\r\n]+/);
 
+     /* capture the editor as a preview png */
+     var img = new Image();
+     img.src = $('#editor')[0].toDataURL("image/png");
+     gcode.preview = img;
+
      exportData.queue.push(gcode);
      exportData.emitQueueChanged();
 
