@@ -287,7 +287,7 @@ module.exports = function(context) {
            * all good we can start transmitting, and we try to keep X
            * lines in flight all the time.
            */
-          while (linessent - linesacked < 4 &&
+          while (linessent - linesacked < 1 &&
                  linessent < gcode.length)
           {
             var line = gcode[linessent] + '\n';
