@@ -59,14 +59,27 @@ function settingsInit() {
       height: 260,
     },
 
-    // Printable/drawable area in MM from furthest griddle edge.
-    printableArea: {
+    // this is the drawable area, printable and drawable are separate, so
+    // that the griddlesize can be different from the the physical griddle
+    // size.
+    drawableArea: {
       offset: {
         left: 20,
         top:  26,
         right: 1, // Used exclusively for GCODE X offset
       },
       width: 250,
+      height: 200,
+    },
+
+    // Printable/drawable area in MM from furthest griddle edge.
+    printableArea: {
+      offset: {
+        left: 0,
+        top:  30,
+        right: 1, // Used exclusively for GCODE X offset
+      },
+      width: 290,
       height: 200,
     },
   };

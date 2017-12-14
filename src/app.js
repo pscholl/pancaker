@@ -83,7 +83,7 @@ function initEditor() {
   var ac = app.constants;
 
   $griddle.aspect = ac.griddleSize.height / ac.griddleSize.width;
-  $editor.aspect = ac.printableArea.height / ac.printableArea.width;
+  $editor.aspect = ac.drawableArea.height / ac.drawableArea.width;
 
   var margin = { // Margin around griddle in absolute pixels to restrict sizing
     l: 10,  // Buffer
@@ -122,10 +122,10 @@ function initEditor() {
 
     var off = $griddle.offset();
     $editor.css({
-      top: off.top + (mmPerPX * ac.printableArea.offset.top),
-      left: off.left + (mmPerPX * ac.printableArea.offset.left),
-      width: ac.printableArea.width * mmPerPX,
-      height: ac.printableArea.height * mmPerPX
+      top: off.top + (mmPerPX * ac.drawableArea.offset.top),
+      left: off.left + (mmPerPX * ac.drawableArea.offset.left),
+      width: ac.drawableArea.width * mmPerPX,
+      height: ac.drawableArea.height * mmPerPX
     });
 
     // Resize functionality for the autotrace window.

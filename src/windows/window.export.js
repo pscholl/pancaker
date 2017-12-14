@@ -251,7 +251,8 @@ module.exports = function(context) {
         var linessent = 0,
             linesacked = 0,
             temperature_ok = false,
-            bedisempty = false;
+            bedisempty = false,
+            isok = new RegExp('(^|\\s)ok($|\\s)', 'i');
 
         client.on('data', function(rx) {
           var str = new TextDecoder("utf-8").decode(rx);
@@ -270,25 +271,30 @@ module.exports = function(context) {
           if (!bedisempty || !temperature_ok)
             return;
 
-          if (str.trim().toLowerCase().indexOf('ok') == 0 && linessent > linesacked)
+          if (isok.test(str) && linessent > linesacked)
             linesacked += 1;
 
           /*
            * send progress report
            */
           if (exportData.progress)
+          {
+            console.log("progress", linessent, linesacked, gcode.length);
             exportData.progress(linesacked / gcode.length);
+          }
 
           /*
            * all good we can start transmitting, and we try to keep X
            * lines in flight all the time.
            */
-          while (linessent - linesacked < 2 &&
+          while (linessent - linesacked < 4 &&
                  linessent < gcode.length)
           {
-            client.write(gcode[linessent] + "\n");
-            console.log("> " + gcode[linessent]);
+            var line = gcode[linessent] + '\n';
+            client.write(line);
             linessent += 1;
+
+            console.log("> " + line);
           }
 
           if (linesacked >= gcode.length)
