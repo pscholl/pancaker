@@ -280,10 +280,10 @@ module.exports = function(context) {
             exportData.progress(linesacked / gcode.length);
 
           /*
-           * all good we can start transmitting, and we try to keep 10
+           * all good we can start transmitting, and we try to keep X
            * lines in flight all the time.
            */
-          while (linessent - linesacked < 5 &&
+          while (linessent - linesacked < 2 &&
                  linessent < gcode.length)
           {
             client.write(gcode[linessent] + "\n");
