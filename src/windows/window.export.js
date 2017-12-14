@@ -270,7 +270,7 @@ module.exports = function(context) {
           if (!bedisempty || !temperature_ok)
             return;
 
-          if (str.trim().toLowerCase().indexOf('ok') !== 0 && linessent > linesacked)
+          if (str.trim().toLowerCase().indexOf('ok') == 0 && linessent > linesacked)
             linesacked += 1;
 
           /*
